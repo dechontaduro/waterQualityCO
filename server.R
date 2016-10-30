@@ -3,7 +3,7 @@ library(ggplot2)
 
 #'Prepare data
 #'include file that contains prepare data code
-source('prepareData.R', local=TRUE)
+source('prepareData.R', local=TRUE, encoding = "UTF-8")
 
 shinyServer(function(input, output) {
   output$plotWP1 <- renderPlot({
