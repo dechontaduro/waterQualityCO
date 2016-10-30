@@ -1,4 +1,5 @@
 # waterQualityCO
+<<<<<<< HEAD
 Example of use of Shinny App with Open Data from <https://www.datos.gov.co>, especifically Index risk of Human Water Consumption in Colombia.
 
 ## Shiny App
@@ -19,3 +20,12 @@ Example of use of Shinny App with Open Data from <https://www.datos.gov.co>, esp
 
 * **presentation.Rmd**: Code for presentation 
 
+=======
+Index risk of Human Water Consumption in Colombia
+
+## Shiny App
+http://dechontaduro.shinyapps.io/waterQualityCO
+
+## Presentation
+http://rpubs.com/dechontaduro/waterQualityColombia
+>>>>>>> a69ade99914b350fe02695ec0e4239bee4ec6b1b
