@@ -1,0 +1,73 @@
+---
+title: "Open Data in Colombia"
+author: "Juan Carlos González Cardona @deChontaduro"
+date: "October 29th, 2016"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Open Data in Colombia
+
+Colombia has a website where public entities can publish data <https://www.datos.gov.co> based in <https://socrata.com/>
+
+For this example <https://github.com/dechontaduro/waterQualityCO> used Index risk of Human Water Consumption in Colombia (SIVICAP)
+
+* 2012 <https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/SIVICAP/vs2t-i43d>
+* 2015 <https://www.datos.gov.co/Salud-y-Protecci-n-Social/SIVICAP-2015/yjkc-jgd2>
+
+The next slides show this index by department high values indicate high risk.
+
+## Index risk of Human Water Consumption in Colombia 2012
+
+```{r plot2012, echo = FALSE, warning=FALSE, error=FALSE}
+library(ggplot2)
+source('prepareData.R', local=TRUE, encoding = "UTF-8")
+
+ggplot(subset(waterQualityColombia,ano == 2012), aes(departamento, promedio_irca)) + 
+      geom_boxplot(aes(fill = departamento), show.legend = FALSE) +
+      annotate("rect", xmin = -Inf, xmax = Inf,   ymin = -Inf, ymax = levelWQ[[1]][2], fill = colLevel[1], alpha=alphaLevel) +
+      annotate("text", x = 1.5, y = levelWQ[[1]][2], label = "No risk")+
+      annotate("rect", xmin = -Inf, xmax = Inf,   ymin = levelWQ[[1]][2], ymax = levelWQ[[1]][3], fill = colLevel[2], alpha=alphaLevel) +
+      annotate("text", x = 1.5, y = levelWQ[[1]][3], label = "Low")+
+      annotate("rect", xmin = -Inf, xmax = Inf,   ymin = levelWQ[[1]][3], ymax = levelWQ[[1]][4], fill = colLevel[3], alpha=alphaLevel) +
+      annotate("text", x = 1.5, y = levelWQ[[1]][4], label = "Medium")+
+      annotate("rect", xmin = -Inf, xmax = Inf,   ymin = levelWQ[[1]][4], ymax = levelWQ[[1]][5], fill = colLevel[4], alpha=alphaLevel) +
+      annotate("text", x = 1.5, y = levelWQ[[1]][5], label = "High")+
+      annotate("rect", xmin = -Inf, xmax = Inf,   ymin = levelWQ[[1]][5], ymax = Inf, fill = colLevel[5], alpha=alphaLevel) +
+      annotate("text", x = 1.5, y = levelWQ[[1]][6], label = "Nonviable")+
+      theme(axis.text.x = element_text(angle=60, hjust=1))+
+      ylab("Index risk water quality")+
+      xlab("Departments")
+```
+
+## Index risk of Human Water Consumption in Colombia 2015
+
+```{r plot2015, echo = FALSE, warning=FALSE, error=FALSE}
+ggplot(subset(waterQualityColombia,ano == 2015), aes(departamento, promedio_irca)) + 
+      geom_boxplot(aes(fill = departamento), show.legend = FALSE) +
+      annotate("rect", xmin = -Inf, xmax = Inf,   ymin = -Inf, ymax = levelWQ[[1]][2], fill = colLevel[1], alpha=alphaLevel) +
+      annotate("text", x = 1.3, y = levelWQ[[1]][2], label = "No risk")+
+      annotate("rect", xmin = -Inf, xmax = Inf,   ymin = levelWQ[[1]][2], ymax = levelWQ[[1]][3], fill = colLevel[2], alpha=alphaLevel) +
+      annotate("text", x = 1.3, y = levelWQ[[1]][3], label = "Low")+
+      annotate("rect", xmin = -Inf, xmax = Inf,   ymin = levelWQ[[1]][3], ymax = levelWQ[[1]][4], fill = colLevel[3], alpha=alphaLevel) +
+      annotate("text", x = 1.3, y = levelWQ[[1]][4], label = "Medium")+
+      annotate("rect", xmin = -Inf, xmax = Inf,   ymin = levelWQ[[1]][4], ymax = levelWQ[[1]][5], fill = colLevel[4], alpha=alphaLevel) +
+      annotate("text", x = 1.3, y = levelWQ[[1]][5], label = "High")+
+      annotate("rect", xmin = -Inf, xmax = Inf,   ymin = levelWQ[[1]][5], ymax = Inf, fill = colLevel[5], alpha=alphaLevel) +
+      annotate("text", x = 1.3, y = levelWQ[[1]][6], label = "Nonviable")+
+      theme(axis.text.x = element_text(angle=60, hjust=1))+
+      ylab("Index risk water quality")+
+      xlab("Departments")
+
+```
+
+## Conclusions
+
+* The use of platforms like Socrata quickly put the government in a place in the Open Data.
+* However, the quality and quantity of data does not guarantee the platform.
+* Anyway, having data is valuable because journalists and developers can communicate to people about things that affect them.
+* Colombia has in average a high level of risk to contracting diseases due to quality of water.
+* Although three years is short time (2012-2015) is notorius that not exists a common policy to decrease this index.
