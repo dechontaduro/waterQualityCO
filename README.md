@@ -18,4 +18,3 @@ Example of use of Shinny App with Open Data from <https://www.datos.gov.co>, esp
 **Files**
 
 * **presentation.Rmd**: Code for presentation 
-
