@@ -13,10 +13,12 @@ knitr::opts_chunk$set(echo = FALSE)
 
 Colombia has a website where public entities can publish data <https://www.datos.gov.co> based in <https://socrata.com/>
 
-For this example <https://github.com/dechontaduro/waterQualityCO> used Index risk of Human Water Consumption in Colombia (SIVICAP)
+In <http://dechontaduro.shinyapps.io/waterQualityCO> you see Index risk of Human Water Consumption in Colombia (SIVICAP).
 
-* 2012 <https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/SIVICAP/vs2t-i43d>
-* 2015 <https://www.datos.gov.co/Salud-y-Protecci-n-Social/SIVICAP-2015/yjkc-jgd2>
+* [Dataset 2012](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/SIVICAP/vs2t-i43d)
+* [Dataset 2015](https://www.datos.gov.co/Salud-y-Protecci-n-Social/SIVICAP-2015/yjkc-jgd2)
+
+*Code in <https://github.com/dechontaduro/waterQualityCO>*
 
 The next slides show this index by department high values indicate high risk.
 
