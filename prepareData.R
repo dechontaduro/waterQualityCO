@@ -23,8 +23,8 @@ wqCO2012 <- read.csv("wqCO2012.csv", fileEncoding = "UTF-8", sep = ",", colClass
 wqCO2015 <- read.csv("wqCO2015.csv", fileEncoding = "UTF-8", sep = ",", colClasses = c("factor", "character", "factor", "int.with.quotes", "num.with.commas"))
 
 #'Simplify somes names
-wqCO2012[wqCO2012$departamento=="Archipiélago de San Andrés. Providencia y Santa Catalina",]$departamento <- "San Andrés y Providencia" 
-wqCO2015[wqCO2015$departamento=="Archipiélago de San Andrés Providencia y Santa Catalina",]$departamento <- "San Andrés y Providencia" 
+wqCO2012[wqCO2012$departamento=="ArchipiÃ©lago de San AndrÃ©s. Providencia y Santa Catalina",]$departamento <- "San AndrÃ©s y Providencia" 
+wqCO2015[wqCO2015$departamento=="ArchipiÃ©lago de San AndrÃ©s Providencia y Santa Catalina",]$departamento <- "San AndrÃ©s y Providencia" 
 
 #'Union both dataset every contains one year, garantee the same columns
 wqCO2015$nivel_de_riesgo <- as.factor("POR DEFINIR")
